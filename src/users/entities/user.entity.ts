@@ -6,11 +6,12 @@ export class User {
   id: number
 
   @Column()
-  email: string
+  username: string
 
   @Column()
   hashed_password: string
 
-  @Column()
-  display_name: string
+  constructor(user: Partial<User>) {
+    Object.assign(this, user)
+  }
 }
